@@ -1,0 +1,274 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "author",
+  "author_profile",
+  "post_type",
+  "col_post_head",
+  "visibility",
+  "group",
+  "posted_on",
+  "body_section",
+  "content",
+  "media",
+  "link_section",
+  "link_url",
+  "link_title",
+  "link_image",
+  "video_url",
+  "share_section",
+  "shared_post",
+  "stats_section",
+  "like_count",
+  "comment_count",
+  "share_count",
+  "col_stats",
+  "pinned",
+  "is_deleted"
+ ],
+ "fields": [
+  {
+   "fieldname": "author",
+   "fieldtype": "Link",
+   "label": "Author",
+   "options": "User",
+   "reqd": 1,
+   "in_list_view": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "author_profile",
+   "fieldtype": "Link",
+   "label": "Author Profile",
+   "options": "Social Profile",
+   "read_only": 1
+  },
+  {
+   "fieldname": "post_type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "Status\nPhoto\nVideo\nLink\nShared\nLife Event",
+   "default": "Status",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "col_post_head",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "visibility",
+   "fieldtype": "Select",
+   "label": "Visibility",
+   "options": "Public\nConnections\nOnly Me\nGroup",
+   "default": "Public",
+   "in_list_view": 1,
+   "search_index": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "group",
+   "fieldtype": "Link",
+   "label": "Group",
+   "options": "Social Group",
+   "search_index": 1
+  },
+  {
+   "fieldname": "posted_on",
+   "fieldtype": "Datetime",
+   "label": "Posted On",
+   "read_only": 1,
+   "search_index": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "body_section",
+   "fieldtype": "Section Break",
+   "label": "Body"
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "Text Editor",
+   "label": "Content"
+  },
+  {
+   "fieldname": "media",
+   "fieldtype": "Table",
+   "label": "Media",
+   "options": "Social Post Media"
+  },
+  {
+   "fieldname": "link_section",
+   "fieldtype": "Section Break",
+   "label": "Link Preview"
+  },
+  {
+   "fieldname": "link_url",
+   "fieldtype": "Data",
+   "label": "Link URL"
+  },
+  {
+   "fieldname": "link_title",
+   "fieldtype": "Data",
+   "label": "Link Title"
+  },
+  {
+   "fieldname": "link_image",
+   "fieldtype": "Attach",
+   "label": "Link Image"
+  },
+  {
+   "fieldname": "video_url",
+   "fieldtype": "Data",
+   "label": "Video URL",
+   "description": "YouTube or Vimeo link; renders as an embedded player."
+  },
+  {
+   "fieldname": "share_section",
+   "fieldtype": "Section Break",
+   "label": "Share"
+  },
+  {
+   "fieldname": "shared_post",
+   "fieldtype": "Link",
+   "label": "Shared Post",
+   "options": "Social Post"
+  },
+  {
+   "fieldname": "stats_section",
+   "fieldtype": "Section Break",
+   "label": "Stats"
+  },
+  {
+   "fieldname": "like_count",
+   "fieldtype": "Int",
+   "label": "Reactions",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "comment_count",
+   "fieldtype": "Int",
+   "label": "Comments",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "share_count",
+   "fieldtype": "Int",
+   "label": "Shares",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "col_stats",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "pinned",
+   "fieldtype": "Check",
+   "label": "Pinned"
+  },
+  {
+   "fieldname": "is_deleted",
+   "fieldtype": "Check",
+   "label": "Deleted",
+   "in_standard_filter": 1,
+   "no_copy": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ES Social",
+ "name": "Social Post",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Social User",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "if_owner": 0,
+   "submit": 0,
+   "report": 1,
+   "export": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1,
+   "permlevel": 0
+  },
+  {
+   "role": "Social User",
+   "read": 0,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "if_owner": 1,
+   "submit": 0,
+   "report": 1,
+   "export": 0,
+   "share": 0,
+   "print": 0,
+   "email": 0,
+   "permlevel": 0
+  },
+  {
+   "role": "Social Moderator",
+   "read": 1,
+   "write": 1,
+   "create": 0,
+   "delete": 1,
+   "if_owner": 0,
+   "submit": 0,
+   "report": 1,
+   "export": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1,
+   "permlevel": 0
+  },
+  {
+   "role": "Social Admin",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "if_owner": 0,
+   "submit": 0,
+   "report": 1,
+   "export": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1,
+   "permlevel": 0
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "if_owner": 0,
+   "submit": 0,
+   "report": 1,
+   "export": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1,
+   "permlevel": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "hash",
+ "naming_rule": "Random"
+}

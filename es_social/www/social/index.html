@@ -1,0 +1,50 @@
+{% extends "templates/web.html" %}
+{% block title %}Feed{% endblock %}
+{% block head_include %}
+<link rel="stylesheet" href="/assets/es_social/css/es_social.css">
+{% endblock %}
+{% block page_content %}
+<div class="es-social" data-page="feed">
+  <div class="es-topbar">
+    <div class="es-brand">ES&nbsp;Social</div>
+    <div class="es-search"><input id="es-search" type="text" placeholder="Search people…" autocomplete="off"><div id="es-search-results" class="es-search-results"></div></div>
+    <nav class="es-nav">
+      <a href="/social">Home</a>
+      <a href="/social/photos">Photos</a>
+      <a href="/social/connections">Friends</a>
+      <a href="/social/groups">Groups</a>
+      {% if me.profile_slug %}<a href="/u/{{ me.profile_slug }}">Profile</a>{% endif %}
+    </nav>
+  </div>
+
+  <div class="es-layout">
+    <aside class="es-aside">
+      <div class="es-card es-me">
+        <img class="es-avatar-lg" src="{{ me.profile_image or '/assets/es_social/img/default-avatar.svg' }}" onerror="this.src='/assets/frappe/images/ui/avatar-empty.png'">
+        <div class="es-me-name">{{ me.display_name or me.user or '' }}</div>
+        <div class="es-me-sub">{{ me.headline or '' }}</div>
+        <div class="es-me-stats"><span><b id="es-conn-count">{{ me.connection_count or 0 }}</b> friends</span><span><b>{{ me.post_count or 0 }}</b> posts</span></div>
+      </div>
+      <div class="es-card" id="es-requests"><div class="es-card-title">Requests</div><div id="es-requests-body" class="es-muted">—</div></div>
+    </aside>
+
+    <main class="es-main">
+      <div class="es-card es-composer">
+        <textarea id="es-composer-text" placeholder="What's on your mind?"></textarea>
+        <div class="es-composer-row">
+          <select id="es-composer-visibility">
+            <option value="Public">🌐 Public</option>
+            <option value="Connections">👥 Friends</option>
+            <option value="Only Me">🔒 Only me</option>
+          </select>
+          <button id="es-post-btn" class="es-btn es-btn-primary">Post</button>
+        </div>
+      </div>
+      <div id="es-feed"></div>
+      <div id="es-feed-sentinel" class="es-muted es-center">Loading…</div>
+    </main>
+  </div>
+</div>
+<script>window.ES_CFG = {csrf: "{{ csrf_token }}", me: {{ me | tojson }}};</script>
+<script src="/assets/es_social/js/es_social.js"></script>
+{% endblock %}

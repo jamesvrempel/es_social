@@ -1,0 +1,25 @@
+{% extends "templates/web.html" %}
+{% block title %}Album{% endblock %}
+{% block head_include %}<link rel="stylesheet" href="/assets/es_social/css/es_social.css">{% endblock %}
+{% block page_content %}
+<div class="es-social" data-page="album" data-slug="{{ slug or '' }}">
+  <div class="es-topbar">
+    <div class="es-brand"><a href="/social">ES&nbsp;Social</a></div>
+    <nav class="es-nav">
+      <a href="/social">Home</a>
+      <a href="/social/photos">Photos</a>
+      <a href="/social/connections">Friends</a>
+      <a href="/social/groups">Groups</a>
+    </nav>
+  </div>
+  <div class="es-layout es-layout-narrow"><main class="es-main">
+    <div class="es-card" id="es-album-head"><div class="es-muted es-center">Loading album…</div></div>
+    <div class="es-card">
+      <div id="es-album-grid" class="es-photo-grid"></div>
+      <div id="es-album-empty" class="es-muted es-center"></div>
+    </div>
+  </main></div>
+</div>
+<script>window.ES_CFG = {csrf: "{{ csrf_token }}"};</script>
+<script src="/assets/es_social/js/es_social.js"></script>
+{% endblock %}

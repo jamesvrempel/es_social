@@ -1,0 +1,149 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "features_section",
+  "allow_public_signup",
+  "enable_groups",
+  "enable_messaging",
+  "enable_pages",
+  "col_features",
+  "default_visibility",
+  "max_upload_size_mb",
+  "limits_section",
+  "posts_per_minute",
+  "comments_per_minute",
+  "col_limits",
+  "enable_profanity_filter",
+  "blocked_keywords"
+ ],
+ "fields": [
+  {
+   "fieldname": "features_section",
+   "fieldtype": "Section Break",
+   "label": "Features"
+  },
+  {
+   "fieldname": "allow_public_signup",
+   "fieldtype": "Check",
+   "label": "Allow Public Signup",
+   "default": "1",
+   "description": "Auto-create a Social Profile and grant the Social User role to new website users."
+  },
+  {
+   "fieldname": "enable_groups",
+   "fieldtype": "Check",
+   "label": "Enable Groups",
+   "default": "1"
+  },
+  {
+   "fieldname": "enable_messaging",
+   "fieldtype": "Check",
+   "label": "Enable Messaging (roadmap)",
+   "default": "0"
+  },
+  {
+   "fieldname": "enable_pages",
+   "fieldtype": "Check",
+   "label": "Enable Pages (roadmap)",
+   "default": "0"
+  },
+  {
+   "fieldname": "col_features",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_visibility",
+   "fieldtype": "Select",
+   "label": "Default Post Visibility",
+   "options": "Public\nConnections\nOnly Me",
+   "default": "Public"
+  },
+  {
+   "fieldname": "max_upload_size_mb",
+   "fieldtype": "Int",
+   "label": "Max Upload Size (MB)",
+   "default": "5"
+  },
+  {
+   "fieldname": "limits_section",
+   "fieldtype": "Section Break",
+   "label": "Rate Limits & Moderation"
+  },
+  {
+   "fieldname": "posts_per_minute",
+   "fieldtype": "Int",
+   "label": "Posts / minute / user",
+   "default": "5"
+  },
+  {
+   "fieldname": "comments_per_minute",
+   "fieldtype": "Int",
+   "label": "Comments / minute / user",
+   "default": "20"
+  },
+  {
+   "fieldname": "col_limits",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "enable_profanity_filter",
+   "fieldtype": "Check",
+   "label": "Enable Keyword Filter",
+   "default": "0"
+  },
+  {
+   "fieldname": "blocked_keywords",
+   "fieldtype": "Small Text",
+   "label": "Blocked Keywords",
+   "description": "Comma-separated. Posts/comments containing these are rejected."
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ES Social",
+ "name": "ES Social Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Social Admin",
+   "read": 1,
+   "write": 1,
+   "create": 0,
+   "delete": 0,
+   "if_owner": 0,
+   "submit": 0,
+   "report": 1,
+   "export": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1,
+   "permlevel": 0
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "if_owner": 0,
+   "submit": 0,
+   "report": 1,
+   "export": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1,
+   "permlevel": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "issingle": 1
+}

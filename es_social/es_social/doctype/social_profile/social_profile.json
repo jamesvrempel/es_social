@@ -1,0 +1,265 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "user",
+  "display_name",
+  "profile_slug",
+  "col_id",
+  "headline",
+  "default_visibility",
+  "media_section",
+  "profile_image",
+  "cover_image",
+  "about_section",
+  "bio",
+  "location",
+  "hometown",
+  "website",
+  "col_about",
+  "birthday",
+  "gender",
+  "relationship_status",
+  "history_section",
+  "work",
+  "education",
+  "stats_section",
+  "connection_count",
+  "post_count"
+ ],
+ "fields": [
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "display_name",
+   "fieldtype": "Data",
+   "label": "Display Name",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "profile_slug",
+   "fieldtype": "Data",
+   "label": "Profile Slug",
+   "unique": 1,
+   "search_index": 1,
+   "description": "URL handle, e.g. /u/<slug>"
+  },
+  {
+   "fieldname": "col_id",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "headline",
+   "fieldtype": "Data",
+   "label": "Headline"
+  },
+  {
+   "fieldname": "default_visibility",
+   "fieldtype": "Select",
+   "label": "Default Visibility",
+   "options": "Public\nConnections\nOnly Me",
+   "default": "Public"
+  },
+  {
+   "fieldname": "media_section",
+   "fieldtype": "Section Break",
+   "label": "Media"
+  },
+  {
+   "fieldname": "profile_image",
+   "fieldtype": "Attach Image",
+   "label": "Profile Image"
+  },
+  {
+   "fieldname": "cover_image",
+   "fieldtype": "Attach Image",
+   "label": "Cover Image"
+  },
+  {
+   "fieldname": "about_section",
+   "fieldtype": "Section Break",
+   "label": "About"
+  },
+  {
+   "fieldname": "bio",
+   "fieldtype": "Text Editor",
+   "label": "Bio"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Current City"
+  },
+  {
+   "fieldname": "hometown",
+   "fieldtype": "Data",
+   "label": "Hometown"
+  },
+  {
+   "fieldname": "website",
+   "fieldtype": "Data",
+   "label": "Website"
+  },
+  {
+   "fieldname": "col_about",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "birthday",
+   "fieldtype": "Date",
+   "label": "Birthday"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "\nMale\nFemale\nOther\nPrefer not to say"
+  },
+  {
+   "fieldname": "relationship_status",
+   "fieldtype": "Select",
+   "label": "Relationship Status",
+   "options": "\nSingle\nIn a relationship\nEngaged\nMarried\nIt's complicated"
+  },
+  {
+   "fieldname": "history_section",
+   "fieldtype": "Section Break",
+   "label": "History"
+  },
+  {
+   "fieldname": "work",
+   "fieldtype": "Table",
+   "label": "Work History",
+   "options": "Social Work History"
+  },
+  {
+   "fieldname": "education",
+   "fieldtype": "Table",
+   "label": "Education",
+   "options": "Social Education"
+  },
+  {
+   "fieldname": "stats_section",
+   "fieldtype": "Section Break",
+   "label": "Stats"
+  },
+  {
+   "fieldname": "connection_count",
+   "fieldtype": "Int",
+   "label": "Connections",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "post_count",
+   "fieldtype": "Int",
+   "label": "Posts",
+   "read_only": 1,
+   "no_copy": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ES Social",
+ "name": "Social Profile",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Social User",
+   "read": 1,
+   "write": 0,
+   "create": 0,
+   "delete": 0,
+   "if_owner": 0,
+   "submit": 0,
+   "report": 1,
+   "export": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1,
+   "permlevel": 0
+  },
+  {
+   "role": "Social User",
+   "read": 0,
+   "write": 1,
+   "create": 0,
+   "delete": 0,
+   "if_owner": 1,
+   "submit": 0,
+   "report": 1,
+   "export": 0,
+   "share": 0,
+   "print": 0,
+   "email": 0,
+   "permlevel": 0
+  },
+  {
+   "role": "Social Moderator",
+   "read": 1,
+   "write": 1,
+   "create": 0,
+   "delete": 0,
+   "if_owner": 0,
+   "submit": 0,
+   "report": 1,
+   "export": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1,
+   "permlevel": 0
+  },
+  {
+   "role": "Social Admin",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "if_owner": 0,
+   "submit": 0,
+   "report": 1,
+   "export": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1,
+   "permlevel": 0
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "if_owner": 0,
+   "submit": 0,
+   "report": 1,
+   "export": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1,
+   "permlevel": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "autoname": "field:user",
+ "naming_rule": "By fieldname",
+ "title_field": "display_name",
+ "search_fields": "display_name,headline,location",
+ "track_changes": 1
+}
