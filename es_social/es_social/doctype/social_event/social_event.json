@@ -1,0 +1,230 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-10-06 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "post",
+  "organizer",
+  "group",
+  "page",
+  "col_e1",
+  "starts_on",
+  "ends_on",
+  "timezone",
+  "status",
+  "loc_section",
+  "venue",
+  "online_url",
+  "col_e2",
+  "capacity",
+  "item",
+  "about_section",
+  "description",
+  "stats_section",
+  "going_count",
+  "interested_count",
+  "col_e3",
+  "reminder_sent"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "post",
+   "fieldtype": "Link",
+   "label": "Post",
+   "options": "Social Post",
+   "read_only": 1
+  },
+  {
+   "fieldname": "organizer",
+   "fieldtype": "Link",
+   "label": "Organizer",
+   "options": "User",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "group",
+   "fieldtype": "Link",
+   "label": "Group",
+   "options": "Social Group"
+  },
+  {
+   "fieldname": "page",
+   "fieldtype": "Link",
+   "label": "Page",
+   "options": "Social Page"
+  },
+  {
+   "fieldname": "col_e1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "starts_on",
+   "fieldtype": "Datetime",
+   "label": "Starts On",
+   "reqd": 1,
+   "in_list_view": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "ends_on",
+   "fieldtype": "Datetime",
+   "label": "Ends On"
+  },
+  {
+   "fieldname": "timezone",
+   "fieldtype": "Data",
+   "label": "Time Zone",
+   "default": "Australia/Perth"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Scheduled\nCancelled",
+   "default": "Scheduled",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "loc_section",
+   "fieldtype": "Section Break",
+   "label": "Where"
+  },
+  {
+   "fieldname": "venue",
+   "fieldtype": "Data",
+   "label": "Venue"
+  },
+  {
+   "fieldname": "online_url",
+   "fieldtype": "Data",
+   "label": "Online Link",
+   "options": "URL"
+  },
+  {
+   "fieldname": "col_e2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "capacity",
+   "fieldtype": "Int",
+   "label": "Capacity",
+   "description": "0 = unlimited"
+  },
+  {
+   "fieldname": "item",
+   "fieldtype": "Data",
+   "label": "ERPNext Item (paid events)",
+   "description": "Item Code. When set, RSVP 'Going' raises a draft Sales Order for the member's customer."
+  },
+  {
+   "fieldname": "about_section",
+   "fieldtype": "Section Break",
+   "label": "About"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "stats_section",
+   "fieldtype": "Section Break",
+   "label": "Stats"
+  },
+  {
+   "fieldname": "going_count",
+   "fieldtype": "Int",
+   "label": "Going",
+   "read_only": 1,
+   "default": "0"
+  },
+  {
+   "fieldname": "interested_count",
+   "fieldtype": "Int",
+   "label": "Interested",
+   "read_only": 1,
+   "default": "0"
+  },
+  {
+   "fieldname": "col_e3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reminder_sent",
+   "fieldtype": "Check",
+   "label": "Reminder Sent",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-06 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ES Social",
+ "name": "Social Event",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1,
+   "if_owner": 0,
+   "submit": 0,
+   "permlevel": 0
+  },
+  {
+   "role": "Social Admin",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1,
+   "if_owner": 0,
+   "submit": 0,
+   "permlevel": 0
+  },
+  {
+   "role": "Social Moderator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "report": 1,
+   "export": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1,
+   "if_owner": 0,
+   "submit": 0,
+   "permlevel": 0
+  }
+ ],
+ "sort_field": "starts_on",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0,
+ "autoname": "hash",
+ "title_field": "title"
+}

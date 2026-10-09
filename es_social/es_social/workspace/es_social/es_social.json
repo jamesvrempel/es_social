@@ -1,0 +1,188 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"esh1\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>ES Social</b></span>\",\"col\":12}},{\"id\":\"essc1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Feed\",\"col\":3}},{\"id\":\"essc2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Groups\",\"col\":3}},{\"id\":\"essc3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Friends\",\"col\":3}},{\"id\":\"essc4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Reports\",\"col\":3}},{\"id\":\"esc1\",\"type\":\"card\",\"data\":{\"card_name\":\"Content\",\"col\":4}},{\"id\":\"esc2\",\"type\":\"card\",\"data\":{\"card_name\":\"People & Groups\",\"col\":4}},{\"id\":\"esc3\",\"type\":\"card\",\"data\":{\"card_name\":\"Moderation & Settings\",\"col\":4}}]",
+ "creation": "2026-01-01 00:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "users",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "ES Social",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Content",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Social Post",
+   "link_count": 0,
+   "link_to": "Social Post",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Social Comment",
+   "link_count": 0,
+   "link_to": "Social Comment",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Social Reaction",
+   "link_count": 0,
+   "link_to": "Social Reaction",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "People & Groups",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Social Profile",
+   "link_count": 0,
+   "link_to": "Social Profile",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Social Connection",
+   "link_count": 0,
+   "link_to": "Social Connection",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Social Group",
+   "link_count": 0,
+   "link_to": "Social Group",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Social Group Member",
+   "link_count": 0,
+   "link_to": "Social Group Member",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Social Album",
+   "link_count": 0,
+   "link_to": "Social Album",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Social Photo",
+   "link_count": 0,
+   "link_to": "Social Photo",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Moderation & Settings",
+   "link_count": 0,
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Social Report",
+   "link_count": 0,
+   "link_to": "Social Report",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "ES Social Settings",
+   "link_count": 0,
+   "link_to": "ES Social Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ES Social",
+ "name": "ES Social",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 99.0,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "label": "Feed",
+   "type": "URL",
+   "url": "/social"
+  },
+  {
+   "color": "Green",
+   "label": "Groups",
+   "type": "URL",
+   "url": "/social/groups"
+  },
+  {
+   "color": "Orange",
+   "label": "Friends",
+   "type": "URL",
+   "url": "/social/connections"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Reports",
+   "link_to": "Social Report",
+   "type": "DocType"
+  }
+ ],
+ "title": "ES Social"
+}

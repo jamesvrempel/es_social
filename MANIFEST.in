@@ -1,0 +1,17 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.txt
+recursive-include es_social *.css
+recursive-include es_social *.csv
+recursive-include es_social *.html
+recursive-include es_social *.ico
+recursive-include es_social *.js
+recursive-include es_social *.json
+recursive-include es_social *.md
+recursive-include es_social *.png
+recursive-include es_social *.py
+recursive-include es_social *.svg
+recursive-include es_social *.txt
+recursive-exclude es_social *.pyc

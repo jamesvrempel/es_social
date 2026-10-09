@@ -1,0 +1,370 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "branding_section",
+  "brand_source",
+  "col_brand",
+  "brand_name",
+  "features_section",
+  "allow_public_signup",
+  "allow_guest_browsing",
+  "signup_url",
+  "enable_groups",
+  "enable_messaging",
+  "enable_pages",
+  "messaging_provider",
+  "col_features",
+  "default_visibility",
+  "max_upload_size_mb",
+  "limits_section",
+  "posts_per_minute",
+  "comments_per_minute",
+  "col_limits",
+  "enable_profanity_filter",
+  "blocked_keywords",
+  "signin_section",
+  "enable_social_login",
+  "signup_customer_scope",
+  "col_signin",
+  "signup_customer_group",
+  "signup_territory",
+  "phase2_section",
+  "enable_events",
+  "keyword_action",
+  "col_phase2",
+  "auto_hide_report_threshold",
+  "feed_section",
+  "enable_fanout",
+  "fanout_celebrity_threshold",
+  "feed_inbox_cap",
+  "fanout_ready_since",
+  "col_feed",
+  "log_slow_feeds_ms",
+  "guest_cache_seconds",
+  "trending_min_account_days",
+  "digest_section",
+  "enable_digests",
+  "col_digest",
+  "digest_hour"
+ ],
+ "fields": [
+  {
+   "fieldname": "branding_section",
+   "fieldtype": "Section Break",
+   "label": "Branding"
+  },
+  {
+   "fieldname": "brand_source",
+   "fieldtype": "Select",
+   "label": "Site Name Shown As",
+   "options": "Website name\nDomain name\nCustom",
+   "default": "Website name",
+   "description": "Replaces \"ES Social\" in the top bar, page titles, join prompt, emails and notifications. Website name = Website Settings \u2192 App Name (falls back to the domain if blank). Domain name = the address the visitor is on, e.g. walpole-mtb.com."
+  },
+  {
+   "fieldname": "col_brand",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "brand_name",
+   "fieldtype": "Data",
+   "label": "Custom Name",
+   "depends_on": "eval:doc.brand_source=='Custom'",
+   "mandatory_depends_on": "eval:doc.brand_source=='Custom'"
+  },
+  {
+   "fieldname": "features_section",
+   "fieldtype": "Section Break",
+   "label": "Features"
+  },
+  {
+   "fieldname": "allow_public_signup",
+   "fieldtype": "Check",
+   "label": "Allow Public Signup",
+   "default": "1",
+   "description": "Auto-create a Social Profile and grant the Social User role to new website users."
+  },
+  {
+   "fieldname": "allow_guest_browsing",
+   "fieldtype": "Check",
+   "label": "Allow Guest Browsing",
+   "default": "1",
+   "description": "Visitors can browse public posts, profiles, albums and public groups without an account. An account is only needed to post, comment, react, share, join groups or add friends."
+  },
+  {
+   "fieldname": "signup_url",
+   "fieldtype": "Data",
+   "label": "Sign-up URL",
+   "default": "/login#signup",
+   "description": "Where the 'Sign up' buttons send guests (e.g. /login#signup, or your approval-gated signup page)."
+  },
+  {
+   "fieldname": "enable_groups",
+   "fieldtype": "Check",
+   "label": "Enable Groups",
+   "default": "1"
+  },
+  {
+   "fieldname": "enable_messaging",
+   "fieldtype": "Check",
+   "label": "Enable Messaging (roadmap)",
+   "default": "0"
+  },
+  {
+   "fieldname": "enable_pages",
+   "fieldtype": "Check",
+   "label": "Enable Pages (roadmap)",
+   "default": "0"
+  },
+  {
+   "fieldname": "messaging_provider",
+   "fieldtype": "Select",
+   "label": "Messaging Provider",
+   "options": "Built-in\nRaven",
+   "default": "Built-in",
+   "depends_on": "enable_messaging",
+   "description": "Raven: the Message button hands off to the Raven app (must be installed). Built-in: ES Social one-to-one messages."
+  },
+  {
+   "fieldname": "col_features",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_visibility",
+   "fieldtype": "Select",
+   "label": "Default Post Visibility",
+   "options": "Public\nConnections\nOnly Me",
+   "default": "Public"
+  },
+  {
+   "fieldname": "max_upload_size_mb",
+   "fieldtype": "Int",
+   "label": "Max Upload Size (MB)",
+   "default": "5"
+  },
+  {
+   "fieldname": "limits_section",
+   "fieldtype": "Section Break",
+   "label": "Rate Limits & Moderation"
+  },
+  {
+   "fieldname": "posts_per_minute",
+   "fieldtype": "Int",
+   "label": "Posts / minute / user",
+   "default": "5"
+  },
+  {
+   "fieldname": "comments_per_minute",
+   "fieldtype": "Int",
+   "label": "Comments / minute / user",
+   "default": "20"
+  },
+  {
+   "fieldname": "col_limits",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "enable_profanity_filter",
+   "fieldtype": "Check",
+   "label": "Enable Keyword Filter",
+   "default": "0"
+  },
+  {
+   "fieldname": "blocked_keywords",
+   "fieldtype": "Small Text",
+   "label": "Blocked Keywords",
+   "description": "Comma-separated. Posts/comments containing these are rejected."
+  },
+  {
+   "fieldname": "signin_section",
+   "fieldtype": "Section Break",
+   "label": "Sign-in & Customer Accounts",
+   "description": "Sign-in providers (Google, Microsoft, GitHub, \u2026) are configured in Social Login Key. Enabled keys appear as 'Continue with \u2026' buttons for guests."
+  },
+  {
+   "fieldname": "enable_social_login",
+   "fieldtype": "Check",
+   "label": "Show Social Sign-in Buttons",
+   "default": "1"
+  },
+  {
+   "fieldname": "signup_customer_scope",
+   "fieldtype": "Select",
+   "label": "Create ES ERP Customer For",
+   "options": "Social login sign-ups\nAll website sign-ups\nOff",
+   "default": "Social login sign-ups",
+   "description": "New members get an Individual Customer, a linked Contact, portal access and the Customer role on first login. Requires ERPNext."
+  },
+  {
+   "fieldname": "col_signin",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "signup_customer_group",
+   "fieldtype": "Data",
+   "label": "Customer Group for Sign-ups",
+   "description": "Exact Customer Group name. Blank = Selling Settings default, then the root group."
+  },
+  {
+   "fieldname": "signup_territory",
+   "fieldtype": "Data",
+   "label": "Territory for Sign-ups",
+   "description": "Exact Territory name. Blank = Selling Settings default, then the root territory."
+  },
+  {
+   "fieldname": "phase2_section",
+   "fieldtype": "Section Break",
+   "label": "Events & Moderation"
+  },
+  {
+   "fieldname": "enable_events",
+   "fieldtype": "Check",
+   "label": "Enable Events",
+   "default": "1"
+  },
+  {
+   "fieldname": "keyword_action",
+   "fieldtype": "Select",
+   "label": "Blocked Keyword Action",
+   "options": "Reject\nHold for review",
+   "default": "Reject",
+   "description": "Hold for review: the post is saved as Pending and queued for moderators instead of being refused."
+  },
+  {
+   "fieldname": "col_phase2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "auto_hide_report_threshold",
+   "fieldtype": "Int",
+   "label": "Auto-hide After N Reports",
+   "default": "3",
+   "description": "Distinct reporters before content is hidden pending review. 0 = off."
+  },
+  {
+   "fieldname": "feed_section",
+   "fieldtype": "Section Break",
+   "label": "Feed & Performance"
+  },
+  {
+   "fieldname": "enable_fanout",
+   "fieldtype": "Check",
+   "label": "Enable Fan-out Feed",
+   "default": "0",
+   "description": "Write posts into followers' feed inboxes. Leave off until slow-feed logs say you need it."
+  },
+  {
+   "fieldname": "fanout_celebrity_threshold",
+   "fieldtype": "Int",
+   "label": "Celebrity Threshold",
+   "default": "500",
+   "description": "Authors/pages with more followers than this are pulled at read time instead of fanned out."
+  },
+  {
+   "fieldname": "feed_inbox_cap",
+   "fieldtype": "Int",
+   "label": "Feed Inbox Cap",
+   "default": "500"
+  },
+  {
+   "fieldname": "fanout_ready_since",
+   "fieldtype": "Datetime",
+   "label": "Fan-out Inboxes Built",
+   "read_only": 1,
+   "depends_on": "enable_fanout",
+   "description": "Set automatically when the background backfill finishes. Until then members keep the normal feed."
+  },
+  {
+   "fieldname": "col_feed",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "log_slow_feeds_ms",
+   "fieldtype": "Int",
+   "label": "Log Feeds Slower Than (ms)",
+   "default": "800"
+  },
+  {
+   "fieldname": "guest_cache_seconds",
+   "fieldtype": "Int",
+   "label": "Guest Cache (seconds)",
+   "default": "45",
+   "description": "Cache public timeline / trending / public profiles for guests. 0 = off."
+  },
+  {
+   "fieldname": "trending_min_account_days",
+   "fieldtype": "Int",
+   "label": "Trending: Min Account Age (days)",
+   "default": "3"
+  },
+  {
+   "fieldname": "digest_section",
+   "fieldtype": "Section Break",
+   "label": "Email Digests"
+  },
+  {
+   "fieldname": "enable_digests",
+   "fieldtype": "Check",
+   "label": "Enable Email Digests",
+   "default": "1"
+  },
+  {
+   "fieldname": "col_digest",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "digest_hour",
+   "fieldtype": "Int",
+   "label": "Send Digests At (hour, site time)",
+   "default": "7"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-10-07 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ES Social",
+ "name": "ES Social Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "Social Admin",
+   "read": 1,
+   "write": 1,
+   "create": 0,
+   "delete": 0,
+   "if_owner": 0,
+   "submit": 0,
+   "report": 1,
+   "export": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1,
+   "permlevel": 0
+  },
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "if_owner": 0,
+   "submit": 0,
+   "report": 1,
+   "export": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1,
+   "permlevel": 0
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "issingle": 1
+}

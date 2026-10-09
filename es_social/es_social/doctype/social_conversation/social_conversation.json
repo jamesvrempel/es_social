@@ -1,0 +1,111 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-10-06 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "pair_key",
+  "user_a",
+  "user_b",
+  "col_c",
+  "last_message",
+  "last_sender",
+  "last_message_at",
+  "a_last_read",
+  "b_last_read"
+ ],
+ "fields": [
+  {
+   "fieldname": "pair_key",
+   "fieldtype": "Data",
+   "label": "Pair Key",
+   "unique": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "user_a",
+   "fieldtype": "Link",
+   "label": "User A",
+   "options": "User",
+   "read_only": 1,
+   "in_list_view": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "user_b",
+   "fieldtype": "Link",
+   "label": "User B",
+   "options": "User",
+   "read_only": 1,
+   "in_list_view": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "col_c",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_message",
+   "fieldtype": "Small Text",
+   "label": "Last Message",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_sender",
+   "fieldtype": "Link",
+   "label": "Last Sender",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_message_at",
+   "fieldtype": "Datetime",
+   "label": "Last Message At",
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "a_last_read",
+   "fieldtype": "Datetime",
+   "label": "A Last Read",
+   "read_only": 1
+  },
+  {
+   "fieldname": "b_last_read",
+   "fieldtype": "Datetime",
+   "label": "B Last Read",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-06 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ES Social",
+ "name": "Social Conversation",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1,
+   "if_owner": 0,
+   "submit": 0,
+   "permlevel": 0
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0,
+ "autoname": "hash",
+ "description": "One-to-one direct message thread. Not readable by moderators unless a message is reported."
+}

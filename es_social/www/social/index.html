@@ -1,0 +1,69 @@
+{% extends "templates/web.html" %}
+{% block title %}Feed · {{ es_brand }}{% endblock %}
+{% block head_include %}
+<link rel="stylesheet" href="/assets/es_social/css/es_social.css?v={{ es_v }}">
+{% endblock %}
+{% block page_content %}
+<div class="es-social" data-page="feed">
+  <div class="es-topbar">
+    <div class="es-brand">{{ es_brand }}</div>
+    <div class="es-search"><input id="es-search" type="text" placeholder="Search people…" autocomplete="off"><div id="es-search-results" class="es-search-results"></div></div>
+    {% include "templates/includes/es_social_nav.html" %}
+  </div>
+
+  <div class="es-layout">
+    <aside class="es-aside">
+      {% if is_guest %}
+      <div class="es-card es-join-card">
+        <div class="es-card-title">Join the conversation</div>
+        <p class="es-muted">You're browsing as a guest. Sign up to post, comment, react and connect with people.</p>
+        <div class="es-provider-buttons"></div>
+        {% if login_providers %}<div class="es-or"><span>or</span></div>{% endif %}
+        <a class="es-btn es-btn-primary es-block" href="{{ signup_url }}">Sign up with email</a>
+        <a class="es-btn es-block" href="/login?redirect-to=/social">Log in</a>
+      </div>
+      {% else %}
+      <div class="es-card es-me">
+        <img class="es-avatar-lg" src="{{ me.profile_image or '/assets/es_social/img/default-avatar.svg' }}" onerror="this.src='/assets/frappe/images/ui/avatar-empty.png'">
+        <div class="es-me-name">{{ me.display_name or me.user or '' }}</div>
+        <div class="es-me-sub">{{ me.headline or '' }}</div>
+        <div class="es-me-stats"><span><b id="es-conn-count">{{ me.connection_count or 0 }}</b> friends</span><span><b>{{ me.post_count or 0 }}</b> posts</span></div>
+      </div>
+      <div class="es-card" id="es-requests"><div class="es-card-title">Requests</div><div id="es-requests-body" class="es-muted">—</div></div>
+      {% endif %}
+      <div class="es-card" id="es-trending" hidden><div class="es-card-title">🔥 Trending</div><div id="es-trending-body"></div></div>
+      {% if es_flags.events %}<div class="es-card" id="es-upcoming" hidden><div class="es-card-title">📅 Upcoming events</div><div id="es-upcoming-body"></div></div>{% endif %}
+    </aside>
+
+    <main class="es-main">
+      {% if is_guest %}
+      <div class="es-card es-guest-banner">
+        <span>👋 Want to share something? </span>
+        <a href="{{ signup_url }}">Sign up</a> or <a href="/login?redirect-to=/social">log in</a> to post.
+      </div>
+      {% else %}
+      <div class="es-card es-composer">
+        <textarea id="es-composer-text" placeholder="What's on your mind?"></textarea>
+        <div class="es-composer-row">
+          <select id="es-composer-visibility">
+            <option value="Public">🌐 Public</option>
+            <option value="Connections">👥 Friends</option>
+            <option value="Only Me">🔒 Only me</option>
+          </select>
+          {% if es_flags.events %}<button id="es-event-btn" class="es-btn" type="button">📅 Event</button>{% endif %}
+          <button id="es-post-btn" class="es-btn es-btn-primary">Post</button>
+        </div>
+      </div>
+      {% endif %}
+      <div class="es-sort-tabs" id="es-sort-tabs">
+        <button data-sort="latest" class="active">Latest</button><button data-sort="top">Top</button>
+      </div>
+      <div id="es-feed"></div>
+      <div id="es-feed-sentinel" class="es-muted es-center">Loading…</div>
+    </main>
+  </div>
+</div>
+<script>window.ES_CFG = {csrf: "{{ csrf_token }}", me: {{ me | tojson }}, is_guest: {{ (is_guest or False) | tojson }}, signup_url: {{ signup_url | tojson }}, providers: {{ (login_providers or []) | tojson }}, flags: {{ (es_flags or {}) | tojson }}, brand: {{ (es_brand or "ES Social") | tojson }}};</script>
+<script src="/assets/es_social/js/es_social.js?v={{ es_v }}"></script>
+<script src="/assets/es_social/js/es_social_phases.js?v={{ es_v }}"></script>
+{% endblock %}

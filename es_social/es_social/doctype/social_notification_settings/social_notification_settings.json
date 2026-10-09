@@ -1,0 +1,161 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-10-06 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "user",
+  "digest_frequency",
+  "col_n1",
+  "last_digest_on",
+  "unsubscribe_token",
+  "types_section",
+  "email_reactions",
+  "email_comments",
+  "email_friend_requests",
+  "col_n2",
+  "email_groups",
+  "email_events",
+  "email_messages"
+ ],
+ "fields": [
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "digest_frequency",
+   "fieldtype": "Select",
+   "label": "Email Digest",
+   "options": "Daily\nWeekly\nOff",
+   "default": "Daily",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "col_n1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_digest_on",
+   "fieldtype": "Datetime",
+   "label": "Last Digest Sent",
+   "read_only": 1
+  },
+  {
+   "fieldname": "unsubscribe_token",
+   "fieldtype": "Data",
+   "label": "Unsubscribe Token",
+   "read_only": 1
+  },
+  {
+   "fieldname": "types_section",
+   "fieldtype": "Section Break",
+   "label": "Include in digest"
+  },
+  {
+   "fieldname": "email_reactions",
+   "fieldtype": "Check",
+   "label": "Reactions",
+   "default": "1"
+  },
+  {
+   "fieldname": "email_comments",
+   "fieldtype": "Check",
+   "label": "Comments & replies",
+   "default": "1"
+  },
+  {
+   "fieldname": "email_friend_requests",
+   "fieldtype": "Check",
+   "label": "Friend requests",
+   "default": "1"
+  },
+  {
+   "fieldname": "col_n2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email_groups",
+   "fieldtype": "Check",
+   "label": "Group activity",
+   "default": "1"
+  },
+  {
+   "fieldname": "email_events",
+   "fieldtype": "Check",
+   "label": "Event reminders",
+   "default": "1"
+  },
+  {
+   "fieldname": "email_messages",
+   "fieldtype": "Check",
+   "label": "Unread messages",
+   "default": "1"
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-06 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ES Social",
+ "name": "Social Notification Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1,
+   "if_owner": 0,
+   "submit": 0,
+   "permlevel": 0
+  },
+  {
+   "role": "Social Admin",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1,
+   "share": 1,
+   "print": 1,
+   "email": 1,
+   "if_owner": 0,
+   "submit": 0,
+   "permlevel": 0
+  },
+  {
+   "role": "Social Moderator",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "report": 1,
+   "export": 0,
+   "share": 0,
+   "print": 1,
+   "email": 1,
+   "if_owner": 0,
+   "submit": 0,
+   "permlevel": 0
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0,
+ "autoname": "hash"
+}

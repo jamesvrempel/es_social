@@ -1,0 +1,16 @@
+{% extends "templates/web.html" %}
+{% block title %}Friends · {{ es_brand }}{% endblock %}
+{% block head_include %}<link rel="stylesheet" href="/assets/es_social/css/es_social.css?v={{ es_v }}">{% endblock %}
+{% block page_content %}
+<div class="es-social" data-page="connections">
+  <div class="es-topbar"><div class="es-brand"><a href="/social">{{ es_brand }}</a></div>
+    {% include "templates/includes/es_social_nav.html" %}</div>
+  <div class="es-layout es-layout-narrow"><main class="es-main">
+    <div class="es-card"><div class="es-card-title">Friend requests</div><div id="es-req-list"></div></div>
+    <div class="es-card"><div class="es-card-title">Your friends</div><div id="es-friend-list" class="es-friend-grid"></div></div>
+  </main></div>
+</div>
+<script>window.ES_CFG = {csrf: "{{ csrf_token }}", is_guest: {{ (is_guest or False) | tojson }}, signup_url: {{ signup_url | tojson }}, providers: {{ (login_providers or []) | tojson }}, flags: {{ (es_flags or {}) | tojson }}, brand: {{ (es_brand or "ES Social") | tojson }}};</script>
+<script src="/assets/es_social/js/es_social.js?v={{ es_v }}"></script>
+<script src="/assets/es_social/js/es_social_phases.js?v={{ es_v }}"></script>
+{% endblock %}

@@ -1,0 +1,58 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "position",
+  "from_year",
+  "to_year",
+  "current"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Data",
+   "label": "Company",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "position",
+   "fieldtype": "Data",
+   "label": "Position",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "from_year",
+   "fieldtype": "Data",
+   "label": "From",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "to_year",
+   "fieldtype": "Data",
+   "label": "To",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "current",
+   "fieldtype": "Check",
+   "label": "Current"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "ES Social",
+ "name": "Social Work History",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "istable": 1
+}

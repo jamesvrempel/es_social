@@ -1,0 +1,16 @@
+<nav class="es-nav">
+  <a href="/social">Home</a>
+  <a href="/social/groups">Groups</a>
+  {% if es_flags and es_flags.pages %}<a href="/social/pages">Pages</a>{% endif %}
+  {% if is_guest %}
+  <a href="/login?redirect-to=/social" class="es-nav-login">Log in</a>
+  <a href="{{ signup_url }}" class="es-btn es-btn-primary es-nav-signup">Sign up</a>
+  {% else %}
+  <a href="/social/photos">Photos</a>
+  <a href="/social/connections">Friends</a>
+  {% if es_flags and es_flags.messaging %}<a href="/social/messages" class="es-nav-msgs">Messages<span class="es-badge" id="es-msg-badge" hidden></span></a>{% endif %}
+  {% if es_flags and es_flags.moderator %}<a href="/social/moderation">Moderation</a>{% endif %}
+  {% if me and me.profile_slug %}<a href="/u/{{ me.profile_slug }}">Profile</a>{% endif %}
+  <a href="/social/settings" title="Settings">⚙</a>
+  {% endif %}
+</nav>
