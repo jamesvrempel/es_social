@@ -7,7 +7,7 @@ app_publisher = "Enterprise Systems Australia"
 app_description = "Public social network module for Frappe / ERPNext"
 app_email = "james@enterprisesystems.com.au"
 app_license = "MIT"
-app_version = "0.9.6"
+app_version = "0.9.7"
 
 # ---------------------------------------------------------------------------
 # Installation

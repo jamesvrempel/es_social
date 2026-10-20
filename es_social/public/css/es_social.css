@@ -37,6 +37,7 @@
 .es-nav { margin-left: auto; display: flex; gap: 6px; }
 .es-nav a { padding: 8px 14px; border-radius: 8px; font-weight: 600; color: var(--es-muted); }
 .es-nav a:hover { background: var(--es-border); color: var(--es-text); }
+.es-nav a.active { background: var(--es-border); color: var(--es-text); }
 .es-search { position: relative; flex: 1; max-width: 320px; }
 .es-search input {
   width: 100%; padding: 9px 14px; border: none; border-radius: 20px;
@@ -173,6 +174,11 @@
   .es-layout { grid-template-columns: 1fr; }
   .es-aside { display: none; }
   .es-nav a { padding: 8px; }
+  /* phones: nav gets its own row and scrolls sideways instead of widening the page */
+  .es-topbar { flex-wrap: wrap; row-gap: 8px; }
+  .es-nav { margin-left: 0; width: 100%; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .es-nav::-webkit-scrollbar { display: none; }
+  .es-nav a { flex: none; white-space: nowrap; }
 }
 
 /* ---- photo upload ---- */

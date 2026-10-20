@@ -2,6 +2,10 @@
   <a href="/social">Home</a>
   <a href="/social/groups">Groups</a>
   {% if es_flags and es_flags.pages %}<a href="/social/pages">Pages</a>{% endif %}
+  {#- links contributed by other apps through the `es_social_nav_links` hook -#}
+  {% for l in (es_nav_links or []) %}{% if not (l.login_required and is_guest) %}
+  <a href="{{ l.route }}"{% if l.active %} class="active"{% endif %}>{{ _(l.label) }}</a>
+  {% endif %}{% endfor %}
   {% if is_guest %}
   <a href="/login?redirect-to=/social" class="es-nav-login">Log in</a>
   <a href="{{ signup_url }}" class="es-btn es-btn-primary es-nav-signup">Sign up</a>

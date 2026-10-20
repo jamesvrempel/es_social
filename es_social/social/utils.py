@@ -370,6 +370,7 @@ def apply_guest_context(context):
     context.es_v = __version__
     context.login_providers = []
     context.es_flags = client_flags(frappe.session.user)
+    context.es_nav_links = nav_links()
     if context.is_guest:
         try:
             from es_social.social.signup import get_login_providers
@@ -377,6 +378,23 @@ def apply_guest_context(context):
         except Exception:
             frappe.log_error(frappe.get_traceback(), "es_social: login providers failed")
     return context
+
+
+def nav_links():
+    """Extra top-nav links other apps register in their hooks.py, e.g.
+
+        es_social_nav_links = [{"label": "Gallery", "route": "/social/gallery"}]
+
+    Optional key: "login_required": True hides the link from guests."""
+    req = getattr(frappe.local, "request", None)
+    path = (req.path if req else "") or ""
+    out = []
+    for item in frappe.get_hooks("es_social_nav_links") or []:
+        if isinstance(item, dict) and item.get("route") and item.get("label"):
+            item = frappe._dict(item)
+            item.active = path == item.route or path.startswith(item.route.rstrip("/") + "/")
+            out.append(item)
+    return out
 
 
 def brand_name():
